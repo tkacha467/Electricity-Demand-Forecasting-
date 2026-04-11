@@ -104,4 +104,5 @@ streamlit run app.py
 
 ## 👨‍💻 Author
 Tushar Kacha  
+Isha Kakadiya
 MSc Data Science  
