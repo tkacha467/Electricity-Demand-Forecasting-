@@ -74,10 +74,16 @@ streamlit run app.py
 
 ---
 
-## 📸 Screenshots (Add later)
-- Dashboard view
-- Forecast graphs
-- Peak detection panel
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](dashboard.png)
+
+### Forecast View
+![Forecast](forecast.png)
+
+### Peak Detection
+![Peak](peak.png)
 
 ---
 
