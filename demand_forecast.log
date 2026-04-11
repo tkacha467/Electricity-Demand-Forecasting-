@@ -1,0 +1,142 @@
+2026-04-10 14:35:19,705 - INFO - ============================================================
+2026-04-10 14:35:19,708 - INFO - STARTING OPTIMIZED ELECTRICITY DEMAND FORECASTING PIPELINE
+2026-04-10 14:35:19,712 - INFO - ============================================================
+2026-04-10 14:35:19,717 - INFO - Loading data from /content/drive/MyDrive/electricity_forecast_model/power_system_load_cleaned.csv
+2026-04-10 14:40:37,540 - INFO - ============================================================
+2026-04-10 14:40:37,541 - INFO - STARTING OPTIMIZED ELECTRICITY DEMAND FORECASTING PIPELINE
+2026-04-10 14:40:37,542 - INFO - ============================================================
+2026-04-10 14:40:37,543 - INFO - Loading data from /content/drive/MyDrive/electricity_forecast_model/power_system_load_cleaned.csv
+2026-04-11 09:31:19,234 - INFO - ============================================================
+2026-04-11 09:31:19,235 - INFO - STARTING OPTIMIZED ELECTRICITY DEMAND FORECASTING PIPELINE
+2026-04-11 09:31:19,236 - INFO - ============================================================
+2026-04-11 09:31:19,237 - INFO - Loading data from /content/drive/MyDrive/electricity_forecast_model/power_system_load_cleaned.csv
+2026-04-11 09:33:09,164 - INFO - ============================================================
+2026-04-11 09:33:09,164 - INFO - STARTING OPTIMIZED ELECTRICITY DEMAND FORECASTING PIPELINE
+2026-04-11 09:33:09,165 - INFO - ============================================================
+2026-04-11 09:33:09,166 - INFO - Loading data from D:\electricity_project\power_system_load_cleaned.csv
+2026-04-11 09:33:09,230 - INFO - Initial shape: (17496, 19)
+2026-04-11 09:33:09,249 - INFO - Removed duplicate hour column
+2026-04-11 09:33:09,255 - INFO - Removing low variance feature: population
+2026-04-11 09:33:09,257 - INFO - Removing low variance feature: year
+2026-04-11 09:33:10,477 - INFO - ADF Statistic for load_demand_MW: -9.7175
+2026-04-11 09:33:10,478 - INFO - p-value: 0.0000
+2026-04-11 09:33:10,478 - INFO - Final shape after cleaning: (17496, 16)
+2026-04-11 09:33:10,479 - INFO - Creating advanced time features...
+2026-04-11 09:33:10,503 - INFO - IQR outliers: 0 (0.00%)
+2026-04-11 09:33:10,505 - INFO - Z-score outliers: 2 (0.01%)
+2026-04-11 09:33:10,530 - INFO - Selected lags based on ACF: [1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 33, 34, 35, 36, 37, 38, 39, 40, 44, 45, 46, 47, 48, 49, 50, 51, 52, 56, 57, 58, 59, 60, 61, 62, 63, 64, 68, 69, 70, 71, 72, 73, 74, 75, 76, 80, 81, 82, 83, 84, 85, 86, 87, 88, 92, 93, 94, 95, 96, 97, 98, 99, 100, 104, 105, 106, 107, 108, 109, 110, 111, 112, 116, 117, 118, 119, 120, 121, 122, 123, 124, 128, 129, 130, 131, 132, 133, 134, 135, 136, 140, 141, 142, 143, 144, 145, 146, 147, 148, 152, 153, 154, 155, 156, 157, 158, 159, 160, 164, 165, 166, 167, 168]
+2026-04-11 09:33:10,530 - INFO - Creating lag features: [1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 20]
+2026-04-11 09:33:10,538 - INFO - Creating rolling features with windows: [6, 12, 24, 48, 168]
+2026-04-11 09:33:12,158 - INFO - Creating expanding window features...
+2026-04-11 09:33:12,165 - INFO - Creating interaction features...
+2026-04-11 09:33:12,187 - INFO - Peak threshold (90th percentile): 343.87 MW
+2026-04-11 09:33:12,189 - INFO - Peak hours: 1750 (10.00%)
+2026-04-11 09:33:12,550 - INFO - Top 10 features correlated with load_demand_MW:
+load_demand_MW     1.000000
+roll_change_12     0.920513
+hour_cos           0.860760
+humidity_hour      0.788655
+lag_1_day_load     0.761908
+lag_1              0.736944
+lag_1_hour_load    0.736941
+roll_mean_6        0.724517
+lag_12             0.719991
+roll_median_6      0.701513
+lag_13             0.695494
+Name: load_demand_MW, dtype: float64
+2026-04-11 09:33:12,561 - INFO - Removed 24 rows with NaN values
+2026-04-11 09:33:12,594 - INFO - Total features selected: 50
+2026-04-11 09:33:12,595 - INFO - Preparing data with train/val/test split...
+2026-04-11 09:33:12,605 - INFO - Train set: 17220 samples
+2026-04-11 09:33:12,606 - INFO - Validation set: 84 samples
+2026-04-11 09:33:12,606 - INFO - Test set: 168 samples
+2026-04-11 09:33:12,643 - INFO - Training ensemble of models...
+2026-04-11 09:33:19,147 - INFO - Ensemble trained with 4 models
+2026-04-11 09:33:19,149 - INFO - Ensemble weights: [0.26032213 0.26160868 0.2440621  0.2340071 ]
+2026-04-11 09:33:19,157 - INFO - === Regression Metrics ===
+2026-04-11 09:33:19,158 - INFO - MAE: 1.9043
+2026-04-11 09:33:19,158 - INFO - RMSE: 2.4859
+2026-04-11 09:33:19,159 - INFO - MAPE: 0.7031
+2026-04-11 09:33:19,160 - INFO - MPE: -0.1260
+2026-04-11 09:33:19,161 - INFO - R2: 0.9961
+2026-04-11 09:33:19,162 - INFO - Max_Error: 8.7970
+2026-04-11 09:33:19,179 - INFO - Class balance:
+is_peak
+0    0.899897
+1    0.100103
+Name: proportion, dtype: float64
+2026-04-11 09:33:19,206 - INFO - Training optimized peak classifier...
+2026-04-11 09:33:20,339 - INFO - Iteration 0, best F1 so far: 0.9231
+2026-04-11 09:33:25,183 - INFO - Iteration 5, best F1 so far: 1.0000
+2026-04-11 09:33:27,862 - INFO - Iteration 10, best F1 so far: 1.0000
+2026-04-11 09:33:32,062 - INFO - Iteration 15, best F1 so far: 1.0000
+2026-04-11 09:33:36,353 - INFO - Iteration 20, best F1 so far: 1.0000
+2026-04-11 09:33:40,413 - INFO - Iteration 25, best F1 so far: 1.0000
+2026-04-11 09:33:43,643 - INFO - Best parameters: {'n_estimators': np.int64(300), 'max_depth': np.int64(5), 'learning_rate': np.float64(0.15), 'subsample': np.float64(0.7), 'colsample_bytree': np.float64(1.0), 'min_child_weight': np.int64(7)}
+2026-04-11 09:33:43,644 - INFO - Best validation F1: 1.0000
+2026-04-11 09:33:43,663 - INFO - === Classification Metrics ===
+2026-04-11 09:33:43,665 - INFO - Precision: 0.8889
+2026-04-11 09:33:43,665 - INFO - Recall: 1.0000
+2026-04-11 09:33:43,666 - INFO - F1-Score: 0.9412
+2026-04-11 09:33:43,667 - INFO - AUC-ROC: 0.9992
+2026-04-11 09:33:43,668 - INFO - Confusion Matrix:
+[[159   1]
+ [  0   8]]
+2026-04-11 09:33:43,675 - INFO - 
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00       160
+           1       0.89      1.00      0.94         8
+
+    accuracy                           0.99       168
+   macro avg       0.94      1.00      0.97       168
+weighted avg       0.99      0.99      0.99       168
+
+2026-04-11 09:33:43,680 - INFO - Analyzing peak demand patterns...
+2026-04-11 09:33:43,706 - INFO - 
+=== Next 24 Hours Forecast ===
+2026-04-11 09:33:43,712 - INFO -     hour  predicted_load  peak_risk risk_level
+0      1      331.933482   0.044064        Low
+1      2      334.325604   0.022441        Low
+2      3      287.407289   0.000087        Low
+3      4      369.881422  99.999550       High
+4      5      312.052194   0.046979        Low
+5      6      287.501120   0.000031        Low
+6      7      278.214807   0.000070        Low
+7      8      275.137165   0.000624        Low
+8      9      245.476622   0.004837        Low
+9     10      236.254123   0.000318        Low
+10    11      236.981888   0.000250        Low
+11    12      252.196200   0.002453        Low
+12    13      230.997663   0.000271        Low
+13    14      237.606988   0.000143        Low
+14    15      261.996470   0.003227        Low
+15    16      264.401129   0.002394        Low
+16    17      293.897636   0.005406        Low
+17    18      243.929042   0.000322        Low
+18    19      267.164233   0.000339        Low
+19    20      279.841461   0.000122        Low
+20    21      274.042270   0.000058        Low
+21    22      300.706265   0.000141        Low
+22    23      340.571968   0.789306        Low
+23    24      359.183386  99.999680       High
+2026-04-11 09:33:43,729 - INFO - 
+=== Monthly Aggregation ===
+2026-04-11 09:33:43,733 - INFO -    year month_name  load_demand_MW_mean  is_peak_sum
+0  2022        Jan               282.62           41
+1  2022        Feb               285.91           56
+2  2022        Mar               290.81           80
+3  2022        Apr               295.34           89
+4  2022        May               297.34          109
+2026-04-11 09:33:43,734 - INFO - ============================================================
+2026-04-11 09:33:43,735 - INFO - PIPELINE COMPLETED SUCCESSFULLY
+2026-04-11 09:33:43,736 - INFO - ============================================================
+2026-04-11 09:33:44,043 - INFO - Plot saved to output/predictions.pkl
+2026-04-11 09:33:45,862 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-11 09:33:45,863 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-11 09:33:46,342 - INFO - Peak analysis plot saved to output/peak_analysis.pkl
+2026-04-11 09:33:46,983 - INFO - Model saved to models/forecaster
+2026-04-11 09:33:46,992 - INFO - Classifier saved to models/classifier
+2026-04-11 09:33:47,007 - INFO - All models saved to models
+2026-04-11 09:33:47,036 - INFO - Production models loaded successfully from PKL
+2026-04-11 09:33:47,037 - INFO - Model expects 50 features
