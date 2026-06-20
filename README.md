@@ -103,7 +103,7 @@ streamlit run app.py
 ---
 
 ## 👨‍💻 Author
-Tushar Kacha,Isha Kakadiya,Drashti Parecha
+Tushar Kacha,Isha Kakadiya
 
 
 MSc Data Science  
